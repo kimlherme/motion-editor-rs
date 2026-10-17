@@ -20,7 +20,7 @@ This is a clean-room implementation. It does not contain Alight Motion code, ass
 
 See [the Linux x86_64 CI build guide](docs/BUILD_CI.pt-BR.md) for the Rust toolchain, system packages, commands, and expected release-binary path. There is no CI workflow configured in this repository yet.
 
-This first public snapshot has not been compiled or tested. Please treat the build and tests as pending until a CI run succeeds.
+An x86_64 Linux executable and its dependency lockfile have been supplied and inspected. The archive did not include CI test logs, so test status remains unverified. This repository does not yet contain an automated CI workflow.
 
 ## Project notes
 

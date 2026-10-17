@@ -17,17 +17,16 @@ A lista de pacotes vem do guia oficial do [`eframe`](https://github.com/emilk/eg
 
 ## Passos do job
 
-Na raiz clonada do repositório, execute:
+O repositório já contém `Cargo.lock`. Na raiz clonada, execute:
 
 ```sh
 rustc --version
-cargo generate-lockfile
 cargo fmt --all -- --check
 cargo test --workspace --locked
 cargo build --release --locked -p motion-editor
 ```
 
-`cargo generate-lockfile` cria `Cargo.lock` para fixar as versões resolvidas. Guarde esse arquivo como artefato do job e envie-o junto com o binário; depois, adicione-o ao repositório para builds reproduzíveis.
+`--locked` impede que o job altere as versões de dependências usadas. Se uma mudança nos manifests exigir atualizar o lockfile, regenere-o deliberadamente, revise e versione a alteração antes de gerar o binário.
 
 O executável esperado é:
 
@@ -44,7 +43,7 @@ cp Cargo.lock dist/
 tar -czf motion-editor-linux-x86_64.tar.gz -C dist .
 ```
 
-Anexe `motion-editor-linux-x86_64.tar.gz` ao job e envie-o de volta aqui. Inclua também o log de `cargo test` e `cargo build`; se o build falhar, envie o primeiro erro completo e o sistema/runner usado. Não renomeie nem remova o `Cargo.lock` do artefato.
+Anexe `motion-editor-linux-x86_64.tar.gz` ao job e envie-o de volta aqui. Inclua também o log de `cargo test` e `cargo build`; se o build falhar, envie o primeiro erro completo e o sistema/runner usado. Inclua o `Cargo.lock` do commit usado para gerar o binário.
 
 ## Limites da compilação
 
