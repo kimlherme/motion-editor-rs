@@ -204,7 +204,7 @@ mod tests {
         time::FrameRate,
     };
     use motion_media::{MediaTimestamp, Rational, ProvidedFrame};
-    use uuid::Uuid;
+    use motion_core::project::StableId as Uuid;
 
     struct SolidProvider;
     impl FrameProvider for SolidProvider {
