@@ -255,7 +255,9 @@ pub enum StillImageFormat {
     Jpeg,
 }
 
-fn still_reader(path: impl AsRef<Path>) -> Result<image::ImageReader, MediaError> {
+fn still_reader(
+    path: impl AsRef<Path>,
+) -> Result<image::ImageReader<std::io::BufReader<std::fs::File>>, MediaError> {
     let mut reader = image::ImageReader::open(path)?.with_guessed_format()?;
     match reader.format() {
         Some(image::ImageFormat::Png | image::ImageFormat::Jpeg) => {}

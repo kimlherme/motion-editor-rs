@@ -87,6 +87,7 @@ enum InterpolationDto { Linear, EaseIn, EaseOut, EaseInOut }
 #[derive(Serialize, Deserialize)]
 struct KeyframeDto<T> { time: TickDto, value: T, interpolation: InterpolationDto }
 #[derive(Serialize, Deserialize)]
+#[derive(Default)]
 struct TransformKeyframesDto {
     #[serde(default)] position: Vec<KeyframeDto<Vec2Dto>>,
     #[serde(default)] anchor: Vec<KeyframeDto<Vec2Dto>>,
