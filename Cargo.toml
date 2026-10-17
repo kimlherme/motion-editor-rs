@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/motion-core",
+    "crates/motion-animation",
+    "crates/motion-media",
+    "crates/motion-render",
+    "crates/motion-export",
+    "crates/motion-engine",
+    "crates/motion-ui",
+    "apps/editor",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+
+[workspace.dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+uuid = { version = "1", features = ["serde", "v4"] }
+thiserror = "2"
+image = { version = "0.25.9", default-features = false, features = ["jpeg", "png"] }
+eframe = { version = "0.33.3", default-features = false, features = ["accesskit", "default_fonts", "glow", "wayland", "x11"] }

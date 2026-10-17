@@ -1,0 +1,14 @@
+[package]
+name = "motion-engine"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+motion-core = { path = "../motion-core" }
+motion-animation = { path = "../motion-animation" }
+motion-media = { path = "../motion-media" }
+motion-render = { path = "../motion-render" }
+motion-export = { path = "../motion-export" }
+thiserror.workspace = true
+uuid.workspace = true

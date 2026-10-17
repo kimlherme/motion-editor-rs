@@ -1,0 +1,12 @@
+[package]
+name = "motion-ui"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+motion-core = { path = "../motion-core" }
+motion-engine = { path = "../motion-engine" }
+motion-media = { path = "../motion-media" }
+motion-render = { path = "../motion-render" }
+eframe.workspace = true

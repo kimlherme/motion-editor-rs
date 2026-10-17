@@ -1,0 +1,10 @@
+[package]
+name = "motion-media"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+motion-core = { path = "../motion-core" }
+image.workspace = true
+thiserror.workspace = true
